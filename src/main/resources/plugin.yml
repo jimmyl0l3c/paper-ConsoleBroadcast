@@ -1,0 +1,29 @@
+name: ConsoleBroadcast
+version: ${project.version}
+main: dev.joska.cb.ConsoleBroadcast
+api-version: 1.13
+authors: [Jimmeh]
+description: Custom console broadcast messages
+website: cb.joska.dev
+
+commands:
+  cb:
+    description: About ConsoleBroadcast
+    usage: /<command>
+  cb reload:
+    description: Reloads ConsoleBroadcast config
+    usage: /<command>
+  s:
+    description: Send a message to chat (as a server).
+    usage: /<command> message
+  warn:
+    description: Send a warning message to chat.
+    usage: /<command> message
+  info:
+    description: Send an info message to chat.
+    usage: /<command> message
+
+permissions:
+  cb.god:
+    description: Allows usage
+    default: false
