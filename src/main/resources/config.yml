@@ -1,5 +1,5 @@
-locale: cs-CZ
+locale: en-US
 
 say-prefix: '§f[§6Server§f]§f'
 info-prefix: '§f[§eInfo§f]§e'
-warn-prefix: '§f[§Warning§f]§l§c'
+warn-prefix: '§f[§cWarning§f]§l§c'
