@@ -6,4 +6,4 @@
 - Send custom info and warning messages to chat (with configurable prefix)
 
 [GitHub](https://github.com/jimmyl0l3c/paper-ConsoleBroadcast/)
-[Learn More](#consolebroadcast)
+[Learn More](#console-broadcast)

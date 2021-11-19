@@ -1,4 +1,4 @@
-# ConsoleBroadcast
+# Console Broadcast
 
 [![PaperMC](https://img.shields.io/badge/PaperMC-Plugin-lightgrey?style=for-the-badge)](https://papermc.io)
 [![GitHub license](https://img.shields.io/github/license/jimmyl0l3c/paper-ConsoleBroadcast?style=for-the-badge)](https://github.com/jimmyl0l3c/paper-ConsoleBroadcast/blob/main/LICENSE)
