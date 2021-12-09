@@ -1,5 +1,7 @@
+# Available locales: en-US, cs-CZ
 locale: en-US
 
-say-prefix: '§f[§6Server§f]§f'
-info-prefix: '§f[§eInfo§f]§e'
-warn-prefix: '§f[§cWarning§f]§l§c'
+prefixes:
+  say: '§f[§6Server§f]§f'
+  info: '§f[§eInfo§f]§e'
+  warn: '§f[§cWarning§f]§l§c'

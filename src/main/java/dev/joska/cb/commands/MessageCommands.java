@@ -1,7 +1,10 @@
 package dev.joska.cb.commands;
 
 import dev.joska.cb.ConsoleBroadcast;
+import dev.joska.cb.LocaleService;
 import dev.joska.cb.enums.MsgType;
+import dev.joska.cb.enums.locale.LocaleError;
+import dev.joska.cb.enums.locale.LocaleWarning;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,29 +22,31 @@ public class MessageCommands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        LocaleService locale = ConsoleBroadcast.getInstance().getLocale();
+
         if (sender.hasPermission("cb.god") && !sender.hasPermission(this.messageType.permission)) {
-            sender.sendMessage(String.format("cb.god permission is deprecated and will be removed. Please use %s instead.", this.messageType.permission));
+            sender.sendMessage(String.format(locale.getWarning(LocaleWarning.DEPRECATED_REPLACED), "cb.god", this.messageType.permission));
         }
 
         if (!(sender instanceof ConsoleCommandSender || sender.hasPermission("cb.god") || sender.hasPermission(this.messageType.permission))) {
-            sender.sendMessage("Missing required permission.");
+            sender.sendMessage(locale.getError(LocaleError.MISSING_PERMISSION));
             return true;
         }
 
         if (args.length == 0) {
-            sender.sendMessage("Missing argument.");
+            sender.sendMessage(locale.getError(LocaleError.MISSING_ARGUMENT));
             return false;
         } else {
             String prefix = "";
             FileConfiguration config = ConsoleBroadcast.getInstance().getConfig();
             switch (this.messageType) {
-                case SAY -> prefix = config.getString("say-prefix");
-                case INFO -> prefix = config.getString("info-prefix");
-                case WARNING -> prefix = config.getString("warn-prefix");
+                case SAY -> prefix = config.getString("prefixes.say");
+                case INFO -> prefix = config.getString("prefixes.info");
+                case WARNING -> prefix = config.getString("prefixes.warn");
             }
 
             if (prefix == null) {
-                sender.sendMessage("§cPlugin error: Config is invalid.");
+                sender.sendMessage(locale.getError(LocaleError.INVALID_CONFIG));
                 return true;
             }
 

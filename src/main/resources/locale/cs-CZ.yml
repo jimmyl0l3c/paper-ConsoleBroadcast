@@ -1,0 +1,23 @@
+warnings:
+  title: '§eVarovani'
+  deprecated-removed: '%s je zastarale a bude odstraneno v nadchazejici verzi'
+  deprecated-replaced: '%s je zastarale a bude ostraneno, prosim pouzijte %s'
+
+errors:
+  title: '§cChyba'
+  permission: 'Nemate pozadovana opravneni'
+  invalid-cmd: 'Neznamy prikaz'
+  invalid-argument: 'Neplatny argument'
+  missing-argument: 'Chybejici argument'
+  config-error: 'Config je neplatny'
+
+info:
+  cfg-reload: 'Config nacten'
+  locale-reload: 'Jazyk nacten'
+
+commands:
+  cb: 'Informace o ConsoleBroadcast'
+  cb reload: 'Znovu nacte konfiguraci ConsoleBroadcast vcetne jazyku'
+  s: 'Odesle zpravu do chatu (jako server)'
+  warn: 'Odesle varovnou zpravu do chatu'
+  info: 'Odesle informacni zpravu do chatu'

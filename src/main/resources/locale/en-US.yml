@@ -1,0 +1,23 @@
+warnings:
+  title: '§eWarning'
+  deprecated-removed: '%s is deprecated and will be removed in an upcoming version'
+  deprecated-replaced: '%s is deprecated and will be removed, please use %s instead'
+
+errors:
+  title: '§cError'
+  permission: 'Insufficient permissions'
+  invalid-cmd: 'Invalid command'
+  invalid-argument: 'Invalid argument'
+  missing-argument: 'Missing required argument'
+  config-error: 'Config is invalid'
+
+info:
+  cfg-reload: 'Config reloaded'
+  locale-reload: 'Locale reloaded'
+
+commands:
+  cb: 'About ConsoleBroadcast'
+  cb reload: 'Reloads ConsoleBroadcast config and locale'
+  s: 'Send a message to chat (as a server)'
+  warn: 'Send a warning message to chat'
+  info: 'Send an info message to chat'
