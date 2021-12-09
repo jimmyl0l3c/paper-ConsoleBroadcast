@@ -8,16 +8,16 @@
 
 ConsoleBroadcast plugin for PaperMC.
 
-## Features
+# Features
 
 * Send messages from console with configurable prefix.
 * Send custom info and warning messages to chat. (with configurable prefix)
 
 ---
 
-## Commands
+# Commands
 
-### Say
+## Say
 
 Usage:
 
@@ -25,7 +25,7 @@ Usage:
 
 Send message using [say prefix](#say-prefix).
 
-### Info
+## Info
 
 Usage:
 
@@ -33,7 +33,7 @@ Usage:
 
 Send message using [info prefix](#info-prefix).
 
-### Warn
+## Warn
 
 Usage:
 
@@ -41,7 +41,7 @@ Usage:
 
 Send message using [warn prefix](#warn-prefix).
 
-### Reload
+## Reload
 
 Usage:
 
@@ -51,7 +51,7 @@ Reloads plugin config.
 
 ---
 
-## Configuration
+# Configuration
 
 Prefixes are configured in **config.yml** file located in **/plugins/ConsoleBroadcast** folder.
 
@@ -59,46 +59,55 @@ Default config:
 ```yaml
 locale: en-US
 
-say-prefix: '§f[§6Server§f]§f'
-info-prefix: '§f[§eInfo§f]§e'
-warn-prefix: '§f[§cWarning§f]§l§c'
+prefixes:
+    say: '§f[§6Server§f]§f'
+    info: '§f[§eInfo§f]§e'
+    warn: '§f[§cWarning§f]§l§c'
 ```
 
 Ingame preview:
 
 ![Preview with default config!](./assets/preview.png "Preview with default config")
 
-### Options
+## Options
 
 Useful resource: [Minecraft Formatting Codes](https://minecraft.fandom.com/wiki/Formatting_codes)
 
-#### locale
+### locale
+
+*NOTE: You must restart server in order to change locale in **help**.
+**cb reload** doesn't have effect.*
+
+#### Available languages:
+
+- **English**: en-US
+- **Czech**: cs-CZ
 
 Set plugin language. **Not implemented yet.**
 
-#### say-prefix
+### say-prefix
 
 Configure prefix for [say command](#say) using [MC formatting codes](https://minecraft.fandom.com/wiki/Formatting_codes).
 
-#### info-prefix
+### info-prefix
 
 Configure prefix for [info command](#info) using [MC formatting codes](https://minecraft.fandom.com/wiki/Formatting_codes).
 
-#### warn-prefix
+### warn-prefix
 
 Configure prefix for [warn command](#warn) using [MC formatting codes](https://minecraft.fandom.com/wiki/Formatting_codes).
 
 ---
 
-## Permissions
+# Permissions
 
 - **cb.reload** - Allow reload command
 - **cb.say** - Allow say command
 - **cb.warn** - Allow warn command
 - **cb.info** - Allow info command
 
-### Deprecated
+## Deprecated
 
-Following permissions are deprecated and will be removed in the next version
+Following permissions are deprecated and were removed in this version
 
 - **cb.god** - Allow player to send messages.

@@ -4,7 +4,6 @@ import dev.joska.cb.ConsoleBroadcast;
 import dev.joska.cb.LocaleService;
 import dev.joska.cb.enums.MsgType;
 import dev.joska.cb.enums.locale.LocaleError;
-import dev.joska.cb.enums.locale.LocaleWarning;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,11 +23,7 @@ public class MessageCommands implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         LocaleService locale = ConsoleBroadcast.getInstance().getLocale();
 
-        if (sender.hasPermission("cb.god") && !sender.hasPermission(this.messageType.permission)) {
-            sender.sendMessage(String.format(locale.getWarning(LocaleWarning.DEPRECATED_REPLACED), "cb.god", this.messageType.permission));
-        }
-
-        if (!(sender instanceof ConsoleCommandSender || sender.hasPermission("cb.god") || sender.hasPermission(this.messageType.permission))) {
+        if (!(sender instanceof ConsoleCommandSender || sender.hasPermission(this.messageType.permission))) {
             sender.sendMessage(locale.getError(LocaleError.MISSING_PERMISSION));
             return true;
         }
