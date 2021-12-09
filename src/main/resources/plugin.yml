@@ -24,6 +24,31 @@ commands:
     usage: /<command> message
 
 permissions:
-  cb.god:
-    description: Allows usage
+  cb.reload:
+    description: Allows reload command
+    default: op
+  cb.say:
+    description: Allows say command
     default: false
+  cb.warn:
+    description: Allows warn command
+    default: op
+  cb.info:
+    description: Allows info command
+    default: op
+  cb.*:
+    description: Wildcard permission
+    default: false
+    children:
+      cb.reload: true
+      cb.say: true
+      cb.warn: true
+      cb.info: true
+  cb.god:
+    description: Deprecated! Allows usage
+    default: false
+    children:
+      cb.reload: true
+      cb.say: true
+      cb.warn: true
+      cb.info: true

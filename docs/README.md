@@ -92,4 +92,13 @@ Configure prefix for [warn command](#warn) using [MC formatting codes](https://m
 
 ## Permissions
 
-**cb.god** - Allow player to send messages.
+- **cb.reload** - Allow reload command
+- **cb.say** - Allow say command
+- **cb.warn** - Allow warn command
+- **cb.info** - Allow info command
+
+### Deprecated
+
+Following permissions are deprecated and will be removed in the next version
+
+- **cb.god** - Allow player to send messages.

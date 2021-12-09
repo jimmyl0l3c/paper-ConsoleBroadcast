@@ -19,13 +19,18 @@ public class MessageCommands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof ConsoleCommandSender || sender.hasPermission("cb.god"))) {
+        if (sender.hasPermission("cb.god") && !sender.hasPermission(this.messageType.permission)) {
+            sender.sendMessage(String.format("cb.god permission is deprecated and will be removed. Please use %s instead.", this.messageType.permission));
+        }
+
+        if (!(sender instanceof ConsoleCommandSender || sender.hasPermission("cb.god") || sender.hasPermission(this.messageType.permission))) {
             sender.sendMessage("Missing required permission.");
-            return  true;
+            return true;
         }
 
         if (args.length == 0) {
             sender.sendMessage("Missing argument.");
+            return false;
         } else {
             String prefix = "";
             FileConfiguration config = ConsoleBroadcast.getInstance().getConfig();
