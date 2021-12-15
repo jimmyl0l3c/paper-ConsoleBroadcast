@@ -34,7 +34,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Test
-        uses: jaoafa/CheckPluginEnabling@v2
+        uses: jaoafa/CheckPluginEnabling@v2.2
         with:
           plugin-name: ConsoleBroadcast
           minecraft-version: ${{ matrix.mcversion }}
