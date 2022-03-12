@@ -44,11 +44,3 @@ permissions:
       cb.say: true
       cb.warn: true
       cb.info: true
-  cb.god:
-    description: Deprecated! Allows usage
-    default: false
-    children:
-      cb.reload: true
-      cb.say: true
-      cb.warn: true
-      cb.info: true
